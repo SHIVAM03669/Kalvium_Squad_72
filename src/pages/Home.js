@@ -6,7 +6,7 @@ export function Home() {
           <div class="flex-1">
             <div class="flex items-center gap-4 mb-6">
               <span class="px-3 py-1 bg-[#F3B15C]/20 text-[#F3B15C] rounded-full text-sm">Kalvium Students</span>
-              <span class="px-3 py-1 bg-[#F3B15C]/20 text-[#F3B15C] rounded-full text-sm">Batch 2023</span>
+              <span class="px-3 py-1 bg-[#F3B15C]/20 text-[#F3B15C] rounded-full text-sm">Batch 2024</span>
             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 dark:text-white">
               <span>Learning to be </span>
@@ -34,7 +34,7 @@ export function Home() {
           </div>
           <div class="flex-1 relative">
             <div class="absolute inset-0 bg-gradient-to-r from-[#FF3939]/10 to-transparent rounded-full blur-3xl"></div>
-            <img src="https://kalvium.com/wp-content/uploads/2023/12/home-hero-image.webp" alt="Students" class="relative z-10 w-full">
+            <img src="" alt="Students" class="relative z-10 w-full">
           </div>
         </div>
       </div>
