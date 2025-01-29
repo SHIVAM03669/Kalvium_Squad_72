@@ -7,7 +7,7 @@ export function Projects() {
         <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Our Projects</h2>
         <div class="grid md:grid-cols-2 gap-8">
           ${projects.map(project => `
-            <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
+            <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:scale-105 hover:shadow-md transition duration-200">
               <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
               <div class="p-6">
                 <h3 class="text-2xl font-bold mb-2 dark:text-white">${project.title}</h3>

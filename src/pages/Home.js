@@ -1,8 +1,12 @@
 export function Home() {
   return `
-    <section class="pt-32 pb-20 px-4">
+    <section class="pt-0 pb-20 px-4">
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="flex-1 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#FF3939]/10 to-transparent rounded-full blur-3xl"></div>
+            <img src="/Design inspiration-bro.png" alt="Students" class="relative z-10 w-full">
+          </div>
           <div class="flex-1">
             <div class="flex items-center gap-4 mb-6">
               <span class="px-3 py-1 bg-[#F3B15C]/20 text-[#F3B15C] rounded-full text-sm">Kalvium Students</span>
@@ -32,12 +36,8 @@ export function Home() {
               </div>
             </div>
           </div>
-          <div class="flex-1 relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#FF3939]/10 to-transparent rounded-full blur-3xl"></div>
-            <img src="/Design inspiration-bro (1).png" alt="Students" class="relative z-10 w-full">
-          </div>
         </div>
       </div>
     </section>
   `;
-} 
+}
