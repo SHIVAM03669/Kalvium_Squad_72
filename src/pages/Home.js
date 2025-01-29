@@ -34,7 +34,7 @@ export function Home() {
           </div>
           <div class="flex-1 relative">
             <div class="absolute inset-0 bg-gradient-to-r from-[#FF3939]/10 to-transparent rounded-full blur-3xl"></div>
-            <img src="" alt="Students" class="relative z-10 w-full">
+            <img src="/Design inspiration-bro (1).png" alt="Students" class="relative z-10 w-full">
           </div>
         </div>
       </div>
