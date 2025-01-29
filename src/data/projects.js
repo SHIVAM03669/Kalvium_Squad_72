@@ -5,7 +5,7 @@ export const projects = [
     tech: ['React', 'Node.js', 'MongoDB', 'Express'],
     image: 'https://kalvium.com/wp-content/uploads/2023/12/home-hero-image.webp',
     link: '#',
-    students: ['Student 1', 'Student 2']
+    students: []
   },
   {
     title: 'Task Management App',
@@ -13,6 +13,6 @@ export const projects = [
     tech: ['React', 'Firebase', 'Tailwind CSS'],
     image: 'https://kalvium.com/wp-content/uploads/2023/12/home-hero-image.webp',
     link: '#',
-    students: ['Student 3', 'Student 4']
+    students: []
   }
 ];

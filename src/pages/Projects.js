@@ -19,7 +19,7 @@ export function Projects() {
                     </span>
                   `).join('')}
                 </div>
-                <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">Built by: ${project.students.join(', ')}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">${project.students.join(', ')}</p>
                 <a href="${project.link}" class="primary-button inline-block">View Project</a>
               </div>
             </div>
