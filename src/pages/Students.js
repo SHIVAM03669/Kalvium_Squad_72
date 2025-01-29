@@ -7,11 +7,11 @@ function chunk(arr, size) {
   );
 }
 
-export function Students() {
+export function Student() {
   return `
     <section class="pt-32 pb-20 px-4">
       <div class="container mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Meet Our Students</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Meet Our Squad.</h2>
         <div class="relative"> <!-- Removed h-[600px] and overflow-hidden -->
           ${chunk(students, 3)
             .map(
