@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-[#FDF6F0] dark:bg-gray-900;
+}
+
+.nav-button {
+  @apply px-4 py-2 rounded-lg transition-all duration-300;
+}
+
+.primary-button {
+  @apply bg-[#6B4EFF] text-white hover:bg-[#5B3FFF] dark:bg-[#7B5EFF] dark:hover:bg-[#6B4EFF] nav-button;
+}
+
+.secondary-button {
+  @apply bg-[#F3B15C] text-black hover:bg-[#E3A14C] nav-button;
+}
+
+.outline-button {
+  @apply border-2 border-[#6B4EFF] text-[#6B4EFF] hover:bg-[#6B4EFF] hover:text-white dark:border-[#7B5EFF] dark:text-[#7B5EFF] dark:hover:bg-[#7B5EFF] dark:hover:text-white nav-button;
+}
+
+.geometric-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f3b15c' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Student group animations */
+.student-group {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.student-group.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation active state */
+.nav-link {
+  padding-bottom: 2px;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
