@@ -7,7 +7,7 @@ function chunk(arr, size) {
   );
 }
 
-export function Student() {
+export function Students() {
   return `
     <section class="pt-32 pb-20 px-4">
       <div class="container mx-auto">
