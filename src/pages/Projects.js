@@ -20,7 +20,7 @@ export function Projects() {
                   `).join('')}
                 </div>
                 <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">${project.students.join(', ')}</p>
-                <a href="${project.link}" class="primary-button inline-block">View Project</a>
+                <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="primary-button inline-block">View Project</a>
               </div>
             </div>
           `).join('')}

@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export function StudentCard(props) {
   const student = props.student;
   const wrapper = document.createElement('div');
@@ -40,174 +38,177 @@ export function StudentCard(props) {
   `;
 
   wrapper.innerHTML = html;
-  
-  // Add styles
-  const style = document.createElement('style');
-  style.textContent = `
-    .card {
-      width: 280px;
-      height: 280px;
-      background: white;
-      border-radius: 32px;
-      padding: 3px;
-      position: relative;
-      box-shadow: #604b4a30 0px 70px 30px -50px;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .card .mail {
-      position: absolute;
-      right: 2rem;
-      top: 1.4rem;
-      background: transparent;
-      border: none;
-      z-index: 10;
-      cursor: pointer;
-    }
-
-    .card .mail svg {
-      stroke: #fbb9b6;
-      stroke-width: 3px;
-    }
-
-    .card .mail svg:hover {
-      stroke: #f55d56;
-    }
-
-    .card .profile-pic {
-      position: absolute;
-      width: calc(100% - 6px);
-      height: calc(100% - 6px);
-      top: 3px;
-      left: 3px;
-      border-radius: 29px;
-      z-index: 1;
-      border: 0px solid #fbb9b6;
-      overflow: hidden;
-      transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
-    }
-
-    .card .profile-pic img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      object-position: center;
-      transition: all 0.5s ease-in-out 0s;
-    }
-
-    .card .bottom {
-      position: absolute;
-      bottom: 3px;
-      left: 3px;
-      right: 3px;
-      background: #fbb9b6;
-      top: 80%;
-      border-radius: 29px;
-      z-index: 2;
-      box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
-      overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    }
-
-    .card .bottom .content {
-      position: absolute;
-      bottom: 0;
-      left: 1.5rem;
-      right: 1.5rem;
-      height: 160px;
-      padding-bottom: 4rem;
-    }
-
-    .card .bottom .content .name {
-      display: block;
-      font-size: 1.2rem;
-      color: white;
-      font-weight: bold;
-    }
-
-    .card .bottom .content .about-me {
-      display: block;
-      font-size: 0.9rem;
-      color: white;
-      margin-top: 1rem;
-      line-height: 1.4;
-      max-height: 80px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .card .bottom .bottom-bottom {
-      position: absolute;
-      bottom: 1rem;
-      left: 1.5rem;
-      right: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card .bottom .bottom-bottom .social-links-container {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .card .bottom .bottom-bottom .social-links-container svg {
-      height: 20px;
-      fill: white;
-      filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
-    }
-
-    .card .bottom .bottom-bottom .social-links-container svg:hover {
-      fill: #f55d56;
-      transform: scale(1.2);
-    }
-
-    .card .bottom .bottom-bottom .button {
-      background: white;
-      color: #fbb9b6;
-      border: none;
-      border-radius: 20px;
-      font-size: 0.6rem;
-      padding: 0.4rem 0.6rem;
-      box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
-      cursor: pointer;
-    }
-
-    .card .bottom .bottom-bottom .button:hover {
-      background: #f55d56;
-      color: white;
-    }
-
-    .card:hover {
-      border-top-left-radius: 55px;
-    }
-
-    .card:hover .bottom {
-      top: 20%;
-      border-radius: 80px 29px 29px 29px;
-      transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
-    }
-
-    .card:hover .profile-pic {
-      width: 100px;
-      height: 100px;
-      aspect-ratio: 1;
-      top: 10px;
-      left: 10px;
-      border-radius: 50%;
-      z-index: 3;
-      border: 7px solid #fbb9b6;
-      box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
-      transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
-    }
-
-    .card:hover .profile-pic img {
-      transform: scale(1.5);
-      object-position: center;
-      transition: all 0.5s ease-in-out 0.5s;
-    }
-  `;
-
-  document.head.appendChild(style);
   return wrapper.innerHTML;
 }
+
+// Add styles to the document head
+const style = document.createElement('style');
+style.textContent = `
+.content {
+  font-family: 'Poppins', sans-serif;
+}
+  .card {
+    width: 280px;
+    height: 280px;
+    background: white;
+    border-radius: 32px;
+    padding: 3px;
+    position: relative;
+    box-shadow: 0 65px 90px rgba(0, 0, 0, 1.0), 0 80px 80px rgba(0, 0, 0, 0.9);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .card .mail {
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .card .mail svg {
+    stroke: #ef3837;
+    stroke-width: 3px;
+  }
+
+  .card .mail svg:hover {
+    stroke: #ef3837;
+  }
+
+  .card .profile-pic {
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    top: 3px;
+    left: 3px;
+    border-radius: 29px;
+    z-index: 1;
+    border: 0px solid #121827;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+  }
+
+  .card .profile-pic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    transition: all 0.5s ease-in-out 0s;
+  }
+
+  .card .bottom {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    background: #ef3837;
+    top: 80%;
+    border-radius: 29px;
+    z-index: 2;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  }
+
+  .card .bottom .content {
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 160px;
+    padding-bottom: 4rem;
+  }
+
+  .card .bottom .content .name {
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  .card .bottom .content .about-me {
+    display: block;
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.4;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card .bottom .bottom-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card .bottom .bottom-bottom .social-links-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .card .bottom .bottom-bottom .social-links-container svg {
+    height: 20px;
+    fill: white;
+    filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+  }
+
+  .card .bottom .bottom-bottom .social-links-container svg:hover {
+    fill: #f55d56;
+    transform: scale(1.2);
+  }
+
+  .card .bottom .bottom-bottom .button {
+    background: white;
+    color: #ef3837;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+    cursor: pointer;
+  }
+
+  .card .bottom .bottom-bottom .button:hover {
+    background: #f55d56;
+    color: white;
+  }
+
+  .card:hover {
+    border-top-left-radius: 55px;
+  }
+
+  .card:hover .bottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  }
+
+  .card:hover .profile-pic {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 3px solid #B83B5E;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+  }
+
+  .card:hover .profile-pic img {
+    transform: scale(1.5);
+    object-position: center;
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+`;
+
+document.head.appendChild(style);
