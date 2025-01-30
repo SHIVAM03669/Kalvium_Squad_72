@@ -1,6 +1,7 @@
 export function router() {
   const routes = {
     '/': () => import('./pages/Home.js').then(m => m.Home()),
+    '/mentors': () => import('./pages/Mentors.js').then(m => m.Mentors()),
     '/students': () => import('./pages/Students.js').then(m => m.Students()),
     '/projects': () => import('./pages/Projects.js').then(m => m.Projects()),
     '/memories': () => import('./pages/Memories.js').then(m => m.Memories()),
@@ -15,18 +16,15 @@ export function router() {
     const app = document.querySelector('#app');
     const navigation = await import('./components/Navigation.js').then(m => m.Navigation());
     const footer = await import('./components/Footer.js').then(m => m.Footer());
-    const themeToggle = await import('./components/ThemeToggle.js').then(m => m.ThemeToggle());
     
     app.innerHTML = `
-      <div class="min-h-screen bg-[#FDF6F0] dark:bg-gray-900 geometric-pattern">
+      <div class="min-h-screen bg-gray-900 geometric-pattern">
         ${navigation}
         ${content}
         ${footer}
-        ${themeToggle}
       </div>
     `;
 
-    // Add click event listeners to navigation links
     document.querySelectorAll('a[href^="/"]').forEach(link => {
       link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
@@ -37,26 +35,11 @@ export function router() {
         }
       });
     });
-
-    // Theme toggle functionality
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-      themeToggleBtn.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-      });
-    }
   }
 
-  // Handle browser back/forward buttons
   window.addEventListener('popstate', handleRoute);
-  
-  // Handle initial route
   handleRoute();
 
-  // Ensure light theme is default
-  if (!('theme' in localStorage)) {
-    localStorage.setItem('theme', 'light');
-  }
-  document.documentElement.classList.remove('dark');
+  // Force dark theme
+  document.documentElement.classList.add('dark');
 }

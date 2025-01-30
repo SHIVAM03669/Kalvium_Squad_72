@@ -20,7 +20,8 @@ export default {
           700: '#e70000',
           800: '#bf0404',
           900: '#9d0a0a',
-        }
+        },
+        customRed: "#ef3837", // Move it outside `primary`
       }
     },
   },
