@@ -30,8 +30,13 @@ export function router() {
         const href = link.getAttribute('href');
         if (href.startsWith('/')) {
           e.preventDefault();
-          window.history.pushState({}, '', href);
-          handleRoute();
+          if (href === '/students') {
+            // Force a full page reload for the students page
+            window.location.href = href;
+          } else {
+            window.history.pushState({}, '', href);
+            handleRoute();
+          }
         }
       });
     });
