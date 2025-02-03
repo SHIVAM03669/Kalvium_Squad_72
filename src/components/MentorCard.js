@@ -3,27 +3,125 @@ export function MentorCard(props) {
   const wrapper = document.createElement('div');
   
   const html = `
-    <div class="card-container">
+    <div class="card-wrapper">
+      <style>
+        .card-wrapper .card {
+          width: 190px;
+          height: 254px;
+          background: #f0f0f0;
+          border-radius: 10px;
+          text-align: center;
+          transition: all 0.5s;
+          position: relative;
+        }
+
+        .card-wrapper .card:hover {
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.623);
+          background-color: #4bb8ff;
+        }
+
+        .card-wrapper .card .blob {
+          height: 10px;
+          width: 75%;
+          border-radius: 0 0 30px 30px;
+          margin: 0 auto;
+          background-color: #4bb8ff;
+          visibility: visible;
+          transition: all 0.3s;
+        }
+
+        .card-wrapper .card:hover .blob {
+          height: 0;
+        }
+
+        .card-wrapper .card .img {
+          display: flex;
+          margin: 30px auto 10px auto;
+          width: 70px;
+          height: 70px;
+          background: url(${mentor.photo}) center/cover;
+          border-radius: 50%;
+          font-size: 11px;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.5s;
+        }
+
+        .card-wrapper .card:hover .img {
+          width: 100%;
+          height: 70%;
+          border-radius: 10px 10px 0 0;
+          margin: 0 auto;
+          background: url(${mentor.photo}) center/cover;
+          z-index: 1;
+        }
+
+        .card-wrapper .card h2 {
+          padding: 15px 10px;
+          font-size: 25px;
+          transition: all 0.1s;
+          z-index: 0;
+          line-height: 17px;
+          color: #333;
+        }
+
+        .card-wrapper .card span {
+          font-size: 18px;
+          color: #666;
+        }
+
+        .card-wrapper .card:hover h2 {
+          opacity: 0;
+          width: 100%;
+          position: absolute;
+          transition: all 0.5s;
+        }
+
+        .card-wrapper .card > p {
+          opacity: 0;
+          transition: all 0.75s;
+        }
+
+        .card-wrapper .card > p > a {
+          display: inline-block;
+          padding: 5px;
+        }
+
+        .card-wrapper .card:hover > p {
+          position: absolute;
+          bottom: 15px;
+          left: 0;
+          right: 0;
+          opacity: 1;
+          transition: all 0.1s;
+        }
+
+        .card-wrapper .card > p > a > svg {
+          width: 35px;
+          height: 35px;
+          transition: transform 0.3s ease;
+        }
+
+        .card-wrapper .card > p > a > svg:hover {
+          transform: scale(1.1);
+        }
+      </style>
       <div class="card">
-        <div class="img-content">
-          <img src="${mentor.photo}" alt="${mentor.name}" class="mentor-image" />
-        </div>
-        <div class="content">
-          <p class="heading">${mentor.name}</p>
-          <p>${mentor.bio}</p>
-          <div class="social-links">
-            <a href="${mentor.linkedin}" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a href="${mentor.github}" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+        <div class="blob"></div>
+        <div class="img"></div>
+        <h2>${mentor.name}<br/><span>${mentor.bio}</span></h2>
+        <p>
+          <a href="${mentor.linkedin}" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#f0f0f0" d="M962.267429 233.179429q-38.253714 56.027429-92.598857 95.451429 0.585143 7.972571 0.585143 23.990857 0 74.313143-21.723429 148.260571t-65.974857 141.970286-105.398857 120.32-147.456 83.456-184.539429 31.158857q-154.843429 0-283.428571-82.870857 19.968 2.267429 44.544 2.267429 128.585143 0 229.156571-78.848-59.977143-1.170286-107.446857-36.864t-65.170286-91.136q18.870857 2.852571 34.889143 2.852571 24.576 0 48.566857-6.290286-64-13.165714-105.984-63.707429t-41.984-117.394286l0-2.267429q38.838857 21.723429 83.456 23.405714-37.741714-25.161143-59.977143-65.682286t-22.308571-87.990857q0-50.322286 25.161143-93.110857 69.12 85.138286 168.301714 136.265143t212.260571 56.832q-4.534857-21.723429-4.534857-42.276571 0-76.580571 53.979429-130.56t130.56-53.979429q80.018286 0 134.875429 58.294857 62.317714-11.995429 117.174857-44.544-21.138286 65.682286-81.115429 101.741714 53.174857-5.705143 106.276571-28.598857z" />
+            </svg>
+          </a>
+          <a href="${mentor.github}" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#f0f0f0" d="M950.930286 512q0 143.433143-83.748571 257.974857t-216.283429 158.573714q-15.433143 2.852571-22.601143-4.022857t-7.168-17.115429l0-120.539429q0-55.442286-29.696-81.115429 32.548571-3.437714 58.587429-10.313143t53.686857-22.308571 46.299429-38.034286 30.281143-59.977143 11.702857-86.016q0-69.12-45.129143-117.686857 21.138286-52.004571-4.534857-116.589714-16.018286-5.12-46.299429 6.290286t-52.589714 25.161143l-21.723429 13.677714q-53.174857-14.848-109.714286-14.848t-109.714286 14.848q-9.142857-6.290286-24.283429-15.433143t-47.689143-22.016-49.152-7.68q-25.161143 64.585143-4.022857 116.589714-45.129143 48.566857-45.129143 117.686857 0 48.566857 11.702857 85.723429t29.988571 59.977143 46.006857 38.253714 53.686857 22.308571 58.587429 10.313143q-22.820571 20.553143-28.013714 58.88-11.995429 5.705143-25.746286 8.557714t-32.548571 2.852571-37.449143-12.288-31.744-35.693714q-10.825143-18.285714-27.721143-29.696t-28.306286-13.677714l-11.410286-1.682286q-11.995429 0-16.603429 2.56t-2.852571 6.582857 5.12 7.972571 7.460571 6.875429l4.022857 2.852571q12.580571 5.705143 24.868571 21.723429t17.993143 29.110857l5.705143 13.165714q7.460571 21.723429 25.161143 35.108571t38.253714 17.115429 39.716571 4.022857 31.744-1.974857l13.165714-2.267429q0 21.723429 0.292571 50.834286t0.292571 30.866286q0 10.313143-7.460571 17.115429t-22.820571 4.022857q-132.534857-44.032-216.283429-158.573714t-83.748571-257.974857q0-119.442286 58.88-220.306286t159.744-159.744 220.306286-58.88 220.306286 58.88 159.744 159.744 58.88 220.306286z" />
+            </svg>
+          </a>
+        </p>
       </div>
     </div>
   `;
@@ -31,117 +129,3 @@ export function MentorCard(props) {
   wrapper.innerHTML = html;
   return wrapper.innerHTML;
 }
-
-// Add styles to the document head
-const style = document.createElement('style');
-style.textContent = `
-  .card-container {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    border-radius: 10px;
-  }
-
-  .card-container::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(-45deg, #ef3837 0%, #6B4EFF 100%);
-    transform: translate3d(0, 0, 0) scale(0.95);
-    filter: blur(20px);
-  }
-
-  .card {
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    overflow: hidden;
-  }
-
-  .card .img-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(-45deg, #ef3837 0%, #6B4EFF 100%);
-    transition: scale 0.6s, rotate 0.6s, filter 1s;
-  }
-
-  .mentor-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  }
-
-  .card .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #e8e8e8;
-    padding: 20px 24px;
-    line-height: 1.5;
-    border-radius: 5px;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(50px);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-    background: linear-gradient(-45deg, rgba(239, 56, 55, 0.9) 0%, rgba(107, 78, 255, 0.9) 100%);
-  }
-
-  .card .content .heading {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-  }
-
-  .card .content p {
-    text-align: center;
-    margin: 0;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-  }
-
-  .social-links a {
-    width: 30px;
-    height: 30px;
-  }
-
-  .social-links svg {
-    width: 100%;
-    height: 100%;
-    fill: #e8e8e8;
-    transition: transform 0.3s ease;
-  }
-
-  .social-links a:hover svg {
-    transform: scale(1.1);
-  }
-
-  .card:hover .content {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .card:hover .img-content {
-    scale: 1.2;
-    filter: blur(5px);
-  }
-`;
-
-document.head.appendChild(style);

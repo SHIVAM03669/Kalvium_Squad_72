@@ -8,6 +8,41 @@ export function router() {
     '/about': () => import('./pages/About.js').then(m => m.About())
   };
 
+  function setupMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && 
+            !mobileMenuButton.contains(e.target) && 
+            !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      });
+
+      // Add click handlers to mobile menu links
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    }
+  }
+
   async function handleRoute() {
     const path = window.location.pathname;
     const page = routes[path] || routes['/'];
@@ -24,6 +59,9 @@ export function router() {
         ${footer}
       </div>
     `;
+
+    // Setup mobile menu after DOM is updated
+    setupMobileMenu();
 
     document.querySelectorAll('a[href^="/"]').forEach(link => {
       link.addEventListener('click', (e) => {
