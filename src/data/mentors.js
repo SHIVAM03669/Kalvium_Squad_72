@@ -23,7 +23,7 @@ export const mentors = [
   {
     name: 'Melvin',
     photo: '/demo.jpg',
-    bio: 'Melvin guides students through the intricacies of modern DevOps.',
+    bio: 'Melvin guide his students through the intricacies of modern DevOps.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   }
