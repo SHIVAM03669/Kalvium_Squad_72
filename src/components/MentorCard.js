@@ -13,6 +13,7 @@ export function MentorCard(props) {
           text-align: center;
           transition: all 0.5s;
           position: relative;
+          overflow: hidden; /* Added overflow: hidden */
           border: 1px solid #EB455F;
         }
 

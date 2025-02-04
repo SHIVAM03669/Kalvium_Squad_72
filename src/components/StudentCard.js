@@ -62,8 +62,8 @@ style.textContent = `
 }
 
 .card:hover {
-  box-shadow: 0 0 20px 1px rgba(239, 56, 55, 0.2);
-  border-color: #ef3837;
+  box-shadow: 0 0 20px 1px rgba(222, 49, 99, 0.2);
+  border-color: #DE3163;
 }
 
 .card .profile-pic {
@@ -73,7 +73,7 @@ style.textContent = `
   top: 3px;
   left: 3px;
   border-radius: 29px;
-  z-index: 1;
+  z-index: 6; /* Added z-index here */
   overflow: hidden;
   transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
   background: #374151;
@@ -92,11 +92,11 @@ style.textContent = `
   bottom: 3px;
   left: 3px;
   right: 3px;
-  background: #ef3837;
+  background: #DE3163;
   top: 80%;
   border-radius: 29px;
   z-index: 2;
-  box-shadow: rgba(239, 56, 55, 0.2) 0px 5px 15px;
+  box-shadow: rgba(222, 49, 99, 0.2) 0px 5px 15px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
@@ -158,7 +158,7 @@ style.textContent = `
 
 .card .bottom .bottom-bottom .button {
   background: white;
-  color: #ef3837;
+  color: #DE3163;
   border: none;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -192,9 +192,9 @@ style.textContent = `
   top: 10px;
   left: 10px;
   border-radius: 50%;
-  z-index: 3;
-  border: 3px solid #ef3837;
-  box-shadow: rgba(239, 56, 55, 0.2) 0px 8px 16px;
+  z-index: 3; /* Updated z-index for hover state */
+  border: 3px solid #DE3163;
+  box-shadow: rgba(222, 49, 99, 0.2) 0px 8px 16px;
   transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
 }
 
@@ -214,7 +214,7 @@ style.textContent = `
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
-    background: rgba(239, 56, 55, 0.2);
+    background: rgba(222, 49, 99, 0.2);
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
