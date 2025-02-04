@@ -32,7 +32,7 @@ export const students = [
   {
     id: 4,
     name: 'Anany Koranne',
-    photo: '/Profile.png',
+    photo: '/anuu.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
