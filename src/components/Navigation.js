@@ -22,19 +22,39 @@ export function Navigation() {
               ['/about', 'About']
             ].map(([path, label]) => `
               <a href="${path}" 
-                 class="text-gray-200 nav-link relative hover:text-customRed transition-colors py-2 md:py-0 ${
-                   path === window.location.pathname ? 'active font-semibold text-customRed' : ''
-                 }">
+                 class="text-gray-200 nav-link relative transition-colors py-2 md:py-0
+                 ${path === window.location.pathname ? 'active text-customRed font-semibold' : 'hover:text-customRed'}">
                 ${label}
-                ${path === window.location.pathname ? 
-                  `<span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#ef3837] rounded-full"></span>` 
-                  : ''
-                }
+                <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#ef3837] rounded-full transition-all duration-300 ease-in-out transform -translate-x-1/2 ${path === window.location.pathname ? 'w-full' : ''}"></span>
               </a>
             `).join('')}
           </div>
         </div>
       </div>
     </nav>
+    <style>
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ef3837; 
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+        left: 50%;
+      }
+
+      /* Style for the active link */
+      .nav-link.active::after {
+        width: 100%;
+        left: 50%;
+      }
+    </style>
   `;
 }
