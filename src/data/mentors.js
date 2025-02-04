@@ -14,8 +14,8 @@ export const mentors = [
     github: 'https://github.com'
   },
   {
-    name: 'Harshit',
-    photo: '/demo.jpg',
+    name: 'Harshith',
+    photo: '/Sir.jpg',
     bio: 'Harshit excels in building robust backend systems.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
