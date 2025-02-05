@@ -22,7 +22,6 @@ export function router() {
         closeIcon.classList.toggle('hidden');
       });
 
-      // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!mobileMenu.contains(e.target) && 
             !mobileMenuButton.contains(e.target) && 
@@ -33,7 +32,6 @@ export function router() {
         }
       });
 
-      // Add click handlers to mobile menu links
       document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
@@ -61,7 +59,11 @@ export function router() {
       </div>
     `;
 
-    // Setup mobile menu after DOM is updated
+    // Scroll to top when navigating to home page
+    if (path === '/home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     setupMobileMenu();
 
     document.querySelectorAll('a[href^="/"]').forEach(link => {
@@ -70,7 +72,6 @@ export function router() {
         if (href.startsWith('/')) {
           e.preventDefault();
           if (href === '/students') {
-            // Force a full page reload for the students page
             window.location.href = href;
           } else {
             window.history.pushState({}, '', href);
@@ -84,6 +85,5 @@ export function router() {
   window.addEventListener('popstate', handleRoute);
   handleRoute();
 
-  // Force dark theme
   document.documentElement.classList.add('dark');
 }
