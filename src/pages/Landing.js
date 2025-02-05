@@ -59,6 +59,14 @@ export function Landing() {
     }
   }, 100);
 
+  // Import the ExploreButton component
+  import('../components/ExploreButton.js').then(module => {
+    const buttonWrapper = document.querySelector('.explore-button-wrapper');
+    if (buttonWrapper) {
+      buttonWrapper.innerHTML = module.ExploreButton();
+    }
+  });
+
   return `
     <div class="relative min-h-[400vh] bg-gray-900 overflow-hidden">
       <!-- Initial Logo -->
@@ -77,8 +85,8 @@ export function Landing() {
           <p class="text-xl text-gray-300 mb-8 max-w-2xl">
             A collective of passionate developers pushing the boundaries of technology and innovation.
           </p>
-          <div>
-            <a href="/home" class="primary-button">Explore</a>
+          <div class="explore-button-wrapper">
+            <!-- Button will be dynamically inserted here -->
           </div>
         </div>
       </div>

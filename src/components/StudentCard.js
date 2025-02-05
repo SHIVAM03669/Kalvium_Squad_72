@@ -16,8 +16,15 @@ export function StudentCard(props) {
       </div>
       <div class="bottom">
         <div class="content">
-          <span class="name">${student.name}</span>
-          <span class="about-me">${student.bio}</span>
+          <div class="header-content">
+            <span class="name">${student.name}</span>
+            <span class="about-me">${student.bio}</span>
+          </div>
+          <div class="skills">
+            ${student.learning.map(skill => `
+              <span class="skill-tag">${skill}</span>
+            `).join('')}
+          </div>
         </div>
         <div class="bottom-bottom">
           <div class="social-links-container">
@@ -32,7 +39,7 @@ export function StudentCard(props) {
               </svg>
             </a>
           </div>
-          <button class="button">Contact Me</button>
+          <button class="contact-button">Contact Me</button>
         </div>
       </div>
     </div>
@@ -45,25 +52,23 @@ export function StudentCard(props) {
 // Add styles to the document head
 const style = document.createElement('style');
 style.textContent = `
-.content {
-  font-family: 'Inter', sans-serif;
-}
-
 .card {
   width: 280px;
   height: 280px;
-  background: #1f2937;
-  border-radius: 32px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
   padding: 3px;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  transition: all 0.5s ease-in-out;
-  border: 1px solid #374151;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .card:hover {
-  box-shadow: 0 0 20px 1px rgba(222, 49, 99, 0.2);
-  border-color: #DE3163;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  background: #1b212f;
 }
 
 .card .profile-pic {
@@ -72,19 +77,17 @@ style.textContent = `
   height: calc(100% - 6px);
   top: 3px;
   left: 3px;
-  border-radius: 29px;
-  z-index: 6; /* Added z-index here */
+  border-radius: 18px;
+  z-index: 2;
   overflow: hidden;
-  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
-  background: #374151;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card .profile-pic img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-position: center;
-  transition: all 0.5s ease-in-out 0s;
+  object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card .bottom {
@@ -92,41 +95,71 @@ style.textContent = `
   bottom: 3px;
   left: 3px;
   right: 3px;
-  background: #DE3163;
-  top: 80%;
-  border-radius: 29px;
-  z-index: 2;
-  box-shadow: rgba(222, 49, 99, 0.2) 0px 5px 15px;
+  background: linear-gradient(145deg, #DC2626, #B91C1C);
+  top: 85%;
+  border-radius: 18px;
+  z-index: 1;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card .bottom .content {
-  position: absolute;
-  bottom: 0;
-  left: 1.5rem;
-  right: 1.5rem;
-  height: 160px;
-  padding-bottom: 4rem;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card .bottom .content .header-content {
+  padding-left: 0; /* Remove padding to avoid overlap */
+  margin-bottom: 1rem;
 }
 
 .card .bottom .content .name {
-  display: block;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: white;
-  font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .card .bottom .content .about-me {
-  display: block;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-top: 1rem;
-  line-height: 1.4;
-  max-height: 80px;
+  margin-bottom: 1rem;
+  display: block;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.card .bottom .content .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.card .bottom .content .skill-tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card .bottom .content .skill-tag:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card .bottom .bottom-bottom {
@@ -137,6 +170,9 @@ style.textContent = `
   display: flex;
   align-items: center;
   justify-content: space-between;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card .bottom .bottom-bottom .social-links-container {
@@ -147,97 +183,60 @@ style.textContent = `
 .card .bottom .bottom-bottom .social-links-container svg {
   width: 24px;
   height: 24px;
-  fill: white;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
 }
 
 .card .bottom .bottom-bottom .social-links-container svg:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
-.card .bottom .bottom-bottom .button {
-  background: white;
-  color: #DE3163;
+.card .bottom .bottom-bottom .contact-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
   border: none;
-  border-radius: 20px;
-  font-size: 0.75rem;
   padding: 0.5rem 1rem;
-  font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
-.card .bottom .bottom-bottom .button:hover {
-  background: #f8f8f8;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.card .bottom .bottom-bottom .contact-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-.card:hover {
-  border-top-left-radius: 55px;
+.card:hover .profile-pic {
+  width: 80px;
+  height: 80px;
+  top: 1.5rem;
+  left: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .profile-pic img {
+  transform: scale(1.2);
 }
 
 .card:hover .bottom {
   top: 20%;
-  border-radius: 80px 29px 29px 29px;
-  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
 
-.card:hover .profile-pic {
-  width: 100px;
-  height: 100px;
-  aspect-ratio: 1;
-  top: 10px;
-  left: 10px;
-  border-radius: 50%;
-  z-index: 3; /* Updated z-index for hover state */
-  border: 3px solid #DE3163;
-  box-shadow: rgba(222, 49, 99, 0.2) 0px 8px 16px;
-  transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+.card:hover .bottom .content,
+.card:hover .bottom .bottom-bottom {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.card:hover .profile-pic img {
-  transform: scale(1.5);
-  object-position: center;
-  transition: all 0.5s ease-in-out 0.5s;
-}
-
-/* Mobile tap hint animation */
-@media (max-width: 768px) {
-  .card::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(222, 49, 99, 0.2);
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-    animation: tapHint 2s infinite;
-  }
-
-  @keyframes tapHint {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.5);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0;
-    }
-  }
-
-  .card:active::after {
-    animation: none;
+@media (max-width: 640px) {
+  .card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 `;
