@@ -14,7 +14,7 @@ export function Navigation() {
           </div>
           <div id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center md:gap-6 mt-4 md:mt-0">
             ${[
-              ['/', 'Home'],
+              ['/home', 'Home'],
               ['/mentors', 'Mentors'], 
               ['/students', 'Students'],
               ['/projects', 'Projects'],

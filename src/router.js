@@ -1,6 +1,7 @@
 export function router() {
   const routes = {
-    '/': () => import('./pages/Home.js').then(m => m.Home()),
+    '/': () => import('./pages/Landing.js').then(m => m.Landing()),
+    '/home': () => import('./pages/Home.js').then(m => m.Home()),
     '/mentors': () => import('./pages/Mentors.js').then(m => m.Mentors()),
     '/students': () => import('./pages/Students.js').then(m => m.Students()),
     '/projects': () => import('./pages/Projects.js').then(m => m.Projects()),
@@ -49,8 +50,8 @@ export function router() {
     const content = await page();
     
     const app = document.querySelector('#app');
-    const navigation = await import('./components/Navigation.js').then(m => m.Navigation());
-    const footer = await import('./components/Footer.js').then(m => m.Footer());
+    const navigation = path === '/' ? '' : await import('./components/Navigation.js').then(m => m.Navigation());
+    const footer = path === '/' ? '' : await import('./components/Footer.js').then(m => m.Footer());
     
     app.innerHTML = `
       <div class="min-h-screen bg-gray-900 geometric-pattern">
