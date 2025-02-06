@@ -12,7 +12,7 @@ export const students = [
   {
     id: 2,
     name: 'Aayush Raut',
-    photo: '/Profile.png',
+    photo: '/ayushi.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -42,7 +42,7 @@ export const students = [
   {
     id: 5,
     name: 'Avinash sah',
-    photo: '/Profile.png',
+    photo: '/mote.png',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -52,7 +52,7 @@ export const students = [
   {
     id: 6,
     name: 'Bhumigaya Peswani',
-    photo: '/Profile.png',
+    photo: '/bhumi.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -62,7 +62,7 @@ export const students = [
   {
     id: 7,
     name: 'Dhruv Malviya',
-    photo: '/Profile.png',
+    photo: '/dhuruv.jpeg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -72,7 +72,7 @@ export const students = [
   {
     id: 8,
     name: 'Gaurav Khandelwal',
-    photo: '/Profile.png',
+    photo: '/gayravv.png',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -92,7 +92,7 @@ export const students = [
   {
     id: 10,
     name: 'Heramb Inamke',
-    photo: '/Vansh.jpg',
+    photo: '/vansh.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -102,7 +102,7 @@ export const students = [
   {
     id: 11,
     name: 'Mallikarjun Hiremath',
-    photo: '/malu.jpg',
+    photo: '/malu.png',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -162,7 +162,7 @@ export const students = [
   {
     id: 17,
     name: 'Vaibhav Krishna U',
-    photo: '/Profile.png',
+    photo: '/msi.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],

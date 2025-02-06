@@ -1,29 +1,29 @@
 export const mentors = [
   {
-    name: 'Manu Abraham',
-    photo: '/demo.jpg',
-    bio: 'With over 10 years of industry experience.',
+    name: 'Manu',
+    photo: '/manu.jpg',
+    bio: 'He is supportive, motivational, strategic, communicative.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
-    name: 'Deepakshi Sharma',
-    photo: '/demo.jpg',
-    bio: 'Deepakshi brings her expertise in creating beautiful.',
+    name: 'Deepakshi',
+    photo: "/maa'm.jpeg",
+    bio: 'She brings her expertise in creating joyful learning experience.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
     name: 'Harshith',
     photo: '/Sir.jpg',
-    bio: 'Harshit excels in building robust backend systems.',
+    bio: 'He has a strong background in software development.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
     name: 'Melvin',
-    photo: '/demo.jpg',
-    bio: 'Melvin guide his students through the intricacies of modern DevOps.',
+    photo: '/melvin.jpg',
+    bio: 'He guides his students for the development of thier soft skills.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   }
