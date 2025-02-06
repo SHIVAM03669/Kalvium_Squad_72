@@ -3,11 +3,11 @@ import { StudentCard } from '../components/StudentCard.js';
 
 export function Students() {
   return `
-    <section class="pt-32 pb-20 px-4">
+    <section class="pt-32 pb-20 px-4 bg-gray-900">
       <div class="container mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16 text-white">Meet Our Squad</h2>
         <div class="md:hidden text-center mb-8">
-          <div class="inline-block bg-gray-800 rounded-lg px-4 py-2 text-gray-300 text-sm">
+          <div class="inline-block bg-gray-800/50 backdrop-blur-lg rounded-lg px-4 py-2 text-gray-300 text-sm">
             <span class="animate-pulse inline-block mr-2">👆</span>
             Tap cards to see more details
           </div>

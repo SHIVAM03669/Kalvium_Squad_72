@@ -47,12 +47,13 @@ style.textContent = `
   .card {
     width: 280px;
     height: 280px;
-    background: white;
+    background: #111827;
     border-radius: 32px;
     padding: 3px;
     position: relative;
-    box-shadow: #604b4a30 0px 70px 30px -50px;
+    box-shadow: 0 0 15px rgba(235, 69, 95, 0.2);
     transition: all 0.5s ease-in-out;
+    border: 2px solid #eb455f;
   }
 
   .card .mail {
@@ -65,13 +66,13 @@ style.textContent = `
   }
 
   .card .mail svg {
-    stroke: #fbb9b6;
+    stroke: #eb455f;
     stroke-width: 3px;
-    transition: stroke 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .card .mail svg:hover {
-    stroke: #f55d56;
+    stroke: white;
   }
 
   .card .profile-pic {
@@ -82,7 +83,7 @@ style.textContent = `
     left: 3px;
     border-radius: 29px;
     z-index: 1;
-    border: 0px solid #fbb9b6;
+    border: 0px solid #eb455f;
     overflow: hidden;
     transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
   }
@@ -100,7 +101,7 @@ style.textContent = `
     bottom: 3px;
     left: 3px;
     right: 3px;
-    background: #fbb9b6;
+    background: #eb455f;
     top: 80%;
     border-radius: 29px;
     z-index: 2;
@@ -149,18 +150,18 @@ style.textContent = `
   .card .bottom .bottom-bottom .social-links-container svg {
     height: 20px;
     fill: white;
-    filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+    filter: drop-shadow(0 5px 5px rgba(255, 252, 252, 0.13));
     transition: all 0.3s ease;
   }
 
   .card .bottom .bottom-bottom .social-links-container svg:hover {
-    fill: #f55d56;
+    fill: white;
     transform: scale(1.2);
   }
 
   .card .bottom .bottom-bottom .button {
-    background: white;
-    color: #fbb9b6;
+    background:rgb(255, 255, 255);
+    color: black;
     border: none;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -171,12 +172,14 @@ style.textContent = `
   }
 
   .card .bottom .bottom-bottom .button:hover {
-    background: #f55d56;
-    color: white;
+    background: white;
+    color: #eb455f;
   }
 
   .card:hover {
     border-top-left-radius: 55px;
+    box-shadow: 0 0 30px rgba(235, 69, 95, 0.3);
+    border: 2px solid #eb455f;
   }
 
   .card:hover .bottom {
@@ -193,8 +196,8 @@ style.textContent = `
     left: 10px;
     border-radius: 50%;
     z-index: 3;
-    border: 7px solid #fbb9b6;
-    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    border: 4px solid #eb455f;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
   }
 
