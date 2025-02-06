@@ -6,11 +6,11 @@ export function Home() {
         <div class="container mx-auto relative z-10">
           <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Welcome to <span class="text-[#FF3939]">Squad 72</span>
+              <span class="text-[#FF3939]">Squad 72</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
-              A collective of passionate developers pushing the boundaries of technology and innovation.
-            </p>
+            <h2 class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
+              Learning to be<span class="text-[#FF3939]"> India's best</span> web developer.
+            </h2>
             <div class="flex flex-wrap justify-center gap-6">
               <a href="/projects" class="primary-button">View Projects</a>
               <a href="/about" class="outline-button">Learn More</a>
