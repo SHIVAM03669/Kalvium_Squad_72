@@ -51,9 +51,9 @@ style.textContent = `
     border-radius: 32px;
     padding: 3px;
     position: relative;
-    box-shadow: 0 0 15px rgba(235, 69, 95, 0.2);
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.2);
     transition: all 0.5s ease-in-out;
-    border: 2px solid #eb455f;
+    border: 2px solid #FF6347;
   }
 
   .card .mail {
@@ -66,7 +66,7 @@ style.textContent = `
   }
 
   .card .mail svg {
-    stroke: #eb455f;
+    stroke: #FF6347;
     stroke-width: 3px;
     transition: all 0.3s ease;
   }
@@ -83,7 +83,7 @@ style.textContent = `
     left: 3px;
     border-radius: 29px;
     z-index: 1;
-    border: 0px solid #eb455f;
+    border: 0px solid #FF6347;
     overflow: hidden;
     transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
   }
@@ -101,7 +101,7 @@ style.textContent = `
     bottom: 3px;
     left: 3px;
     right: 3px;
-    background: #eb455f;
+    background: #FF6347;
     top: 80%;
     border-radius: 29px;
     z-index: 2;
@@ -160,7 +160,7 @@ style.textContent = `
   }
 
   .card .bottom .bottom-bottom .button {
-    background:rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
     color: black;
     border: none;
     border-radius: 20px;
@@ -173,13 +173,13 @@ style.textContent = `
 
   .card .bottom .bottom-bottom .button:hover {
     background: white;
-    color: #eb455f;
+    color: #FF6347;
   }
 
   .card:hover {
     border-top-left-radius: 55px;
-    box-shadow: 0 0 30px rgba(235, 69, 95, 0.3);
-    border: 2px solid #eb455f;
+    box-shadow: 0 0 30px rgba(255, 99, 71, 0.3);
+    border: 2px solid #FF6347;
   }
 
   .card:hover .bottom {
@@ -196,7 +196,7 @@ style.textContent = `
     left: 10px;
     border-radius: 50%;
     z-index: 3;
-    border: 4px solid #eb455f;
+    border: 4px solid #FF6347;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
   }

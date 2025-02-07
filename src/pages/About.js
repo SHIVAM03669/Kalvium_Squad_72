@@ -1,7 +1,7 @@
 export function About() {
   return `
-    <section class="pt-32 pb-20 px-4">
-      <div class="container mx-auto">
+    <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+      <div class="container mx-auto relative z-10 max-w-6xl">
         <h2 class="text-4xl font-bold text-center mb-16 text-white">About Squad 72</h2>
         <div class="max-w-4xl mx-auto space-y-12">
           <div class="bg-gray-800/50 backdrop-blur-lg rounded-xl p-8 shadow-xl border border-gray-700">
@@ -75,6 +75,10 @@ export function About() {
           </div>
         </div>
       </div>
+
+      <!-- Background Elements -->
+      <div class="absolute top-20 right-0 w-72 h-72 bg-[#FF3939]/10 rounded-full filter blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 left-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
     </section>
   `;
 }

@@ -29,10 +29,10 @@ export function Home() {
                 Welcome to <span class="text-[#FF3939]">Squad 72</span>
               </h1>
               <p class="typing-text text-lg md:text-xl text-gray-300 leading-relaxed opacity-0 transition-opacity duration-500">
-                Learning to be India's best web developer.
+                Learning to be <span class="text-[#FF3939]">India's</span> best web developer.
               </p>
               <div class="flex flex-wrap gap-6">
-                <a href="/projects" class="primary-button">View Projects</a>
+                <a href="/projects" class="bg-[#FF3939] hover:bg-[#FF6347] text-white px-6 py-3 rounded-lg transition-all duration-300">View Projects</a>
                 <a href="/about" class="outline-button">Learn More</a>
               </div>
             </div>
