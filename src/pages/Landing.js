@@ -4,13 +4,21 @@ export function Landing() {
     const logo = document.querySelector('.logo-container');
     const content = document.querySelector('.content-container');
     const letter = document.querySelector('.letter-overlay');
-    const maxLogoScale = 3; // Reduced from 5
-    const maxLetterScale = 5; // Reduced from 15
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const maxLogoScale = 3;
+    const maxLetterScale = 5;
     let contentRevealed = false;
     
-    if (logo && content && letter) {
+    if (logo && content && letter && scrollIndicator) {
       window.addEventListener('scroll', () => {
-        const scrollPercent = window.scrollY / (window.innerHeight * 2.5); // Increased for slower animation
+        const scrollPercent = window.scrollY / (window.innerHeight * 2.5);
+        
+        // Hide scroll indicator on scroll
+        if (scrollPercent > 0.1) {
+          scrollIndicator.style.opacity = '0';
+        } else {
+          scrollIndicator.style.opacity = '1';
+        }
         
         // First phase: Logo scaling and fading (0-50% scroll)
         if (scrollPercent <= 0.5) {
@@ -28,14 +36,13 @@ export function Landing() {
         } 
         // Second phase: Letter scaling (50-75% scroll)
         else if (scrollPercent <= 0.75) {
-          const letterProgress = (scrollPercent - 0.5) * 2; // Slower scaling
+          const letterProgress = (scrollPercent - 0.5) * 2;
           const letterScale = 1 + Math.min(letterProgress * maxLetterScale, maxLetterScale);
           
           logo.style.opacity = '0';
           letter.style.transform = `scale(${letterScale})`;
           letter.style.opacity = Math.min(letterProgress * 2, 1);
           
-          // Slower color transition
           const redOpacity = Math.min(letterProgress, 1);
           letter.querySelector('.number').style.color = `rgba(255, 57, 57, ${redOpacity})`;
           
@@ -44,7 +51,7 @@ export function Landing() {
         }
         // Final phase: Content reveal (75-100% scroll)
         else {
-          const contentProgress = (scrollPercent - 0.75) * 2; // Slower content reveal
+          const contentProgress = (scrollPercent - 0.75) * 2;
           
           logo.style.opacity = '0';
           letter.style.transform = `scale(${maxLetterScale})`;
@@ -69,6 +76,14 @@ export function Landing() {
 
   return `
     <div class="relative min-h-[400vh] bg-gray-900 overflow-hidden">
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator fixed bottom-8 left-1/2 -translate-x-1/2 z-40 text-white flex flex-col items-center transition-opacity duration-500">
+        <span class="text-sm mb-2">Scroll Down</span>
+        <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+
       <!-- Initial Logo -->
       <div class="logo-container fixed top-0 left-0 w-full h-screen flex items-center justify-center z-30 pointer-events-none transition-all duration-500 ease-out">
         <img 

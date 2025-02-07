@@ -1,34 +1,53 @@
 export function Home() {
+  // Initialize typing animation after content is loaded
+  setTimeout(() => {
+    const typingText = document.querySelector('.typing-text');
+    if (typingText) {
+      typingText.style.opacity = '1';
+      let text = typingText.textContent;
+      typingText.textContent = '';
+      let i = 0;
+      const typeWriter = () => {
+        if (i < text.length) {
+          typingText.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        }
+      };
+      typeWriter();
+    }
+  }, 100);
+
   return `
     <div class="min-h-screen bg-gray-900">
       <!-- Hero Section -->
       <section class="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div class="container mx-auto relative z-10">
-          <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              <span class="text-[#FF3939]">Squad 72</span>
-            </h1>
-            <h2 class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
-              Learning to be<span class="text-[#FF3939]"> India's best</span> web developer.
-            </h2>
-            <div class="flex flex-wrap justify-center gap-6">
-              <a href="/projects" class="primary-button">View Projects</a>
-              <a href="/about" class="outline-button">Learn More</a>
+        <div class="container mx-auto relative z-10 max-w-6xl">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+              <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                Welcome to <span class="text-[#FF3939]">Squad 72</span>
+              </h1>
+              <p class="typing-text text-lg md:text-xl text-gray-300 leading-relaxed opacity-0 transition-opacity duration-500">
+                Learning to be India's best web developer.
+              </p>
+              <div class="flex flex-wrap gap-6">
+                <a href="/projects" class="primary-button">View Projects</a>
+                <a href="/about" class="outline-button">Learn More</a>
+              </div>
+            </div>
+            <div class="relative hidden md:block">
+              <div class="absolute top-0 right-0 w-72 h-72 bg-[#FF3939]/10 rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
             </div>
           </div>
-        </div>
-        
-        <!-- Animated Background -->
-        <div class="absolute top-0 left-0 w-full h-full">
-          <div class="absolute top-20 left-10 w-72 h-72 bg-[#FF3939]/10 rounded-full filter blur-3xl animate-pulse"></div>
-          <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
         </div>
       </section>
 
       <!-- Features Section -->
       <section class="py-20 px-4">
-        <div class="container mx-auto">
-          <div class="grid md:grid-cols-3 gap-8">
+        <div class="container mx-auto max-w-6xl">
+          <div class="grid md:grid-cols-3 gap-12">
             <div class="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 transform hover:scale-105 transition-all duration-300">
               <div class="w-14 h-14 bg-[#FF3939]/10 rounded-xl flex items-center justify-center mb-6">
                 <svg class="w-8 h-8 text-[#FF3939]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +83,7 @@ export function Home() {
 
       <!-- Stats Section -->
       <section class="py-20 px-4">
-        <div class="container mx-auto">
+        <div class="container mx-auto max-w-6xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center">
               <div class="text-4xl font-bold text-[#FF3939] mb-2">18+</div>

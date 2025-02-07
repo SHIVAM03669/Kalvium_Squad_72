@@ -22,7 +22,7 @@ export const students = [
   {
     id: 3,
     name: 'Anant Sastrula',
-    photo: '/Profile.png',
+    photo: '/chatgpt.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -92,7 +92,7 @@ export const students = [
   {
     id: 10,
     name: 'Heramb Inamke',
-    photo: '/vansh.jpg',
+    photo: '/Vansh.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -172,7 +172,7 @@ export const students = [
   {
     id: 18,
     name: 'Vedant Pawar',
-    photo: '/Profile.png',
+    photo: '/vetant.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],

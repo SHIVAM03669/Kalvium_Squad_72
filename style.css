@@ -42,6 +42,22 @@ body {
   transform-origin: center center;
 }
 
+/* Scroll indicator animation */
+.scroll-indicator {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 /* Smooth scrolling for animation */
 html {
   scroll-behavior: smooth;
@@ -117,4 +133,15 @@ html {
   h2 {
     font-size: 1.875rem !important;
   }
+}
+
+/* Typing animation cursor effect */
+.typing-text::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
 }
