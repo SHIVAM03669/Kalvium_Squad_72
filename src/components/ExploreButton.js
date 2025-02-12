@@ -81,7 +81,7 @@ export function ExploreButton() {
         bottom: 0;
         padding: 0.75rem 0;
         margin: 0 0 0 1.85rem;
-        color: #000000;
+        color:rgb(255, 255, 255);
         font-weight: 700;
         line-height: 1.6;
         text-align: center;

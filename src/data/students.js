@@ -82,7 +82,7 @@ export const students = [
   {
     id: 9,
     name: 'Harshit Dakhane',
-    photo: '/Profile.png',
+    photo: '/harshit.png',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
@@ -92,7 +92,7 @@ export const students = [
   {
     id: 10,
     name: 'Heramb Inamke',
-    photo: '/Vansh.jpg',
+    photo: '/vanch.jpg',
     batch: 'Kalvium 2023',
     bio: 'Full-stack developer with a focus on Node.js and React.',
     learning: ['Node.js', 'MongoDB', 'AWS'],
