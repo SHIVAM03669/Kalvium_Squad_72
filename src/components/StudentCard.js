@@ -51,9 +51,9 @@ style.textContent = `
     border-radius: 32px;
     padding: 3px;
     position: relative;
-    box-shadow: 0 0 15px rgba(255, 99, 71, 0.2);
+    box-shadow: 0 0 15px rgba(114, 47, 55, 0.2);
     transition: all 0.5s ease-in-out;
-    border: 2px solid #FF6347;
+    border: 2px solid #722F37;
   }
 
   .card .mail {
@@ -66,7 +66,7 @@ style.textContent = `
   }
 
   .card .mail svg {
-    stroke: #FF6347;
+    stroke: #722F37;
     stroke-width: 3px;
     transition: all 0.3s ease;
   }
@@ -83,7 +83,7 @@ style.textContent = `
     left: 3px;
     border-radius: 29px;
     z-index: 1;
-    border: 0px solid #FF6347;
+    border: 0px solid #722F37;
     overflow: hidden;
     transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
   }
@@ -101,7 +101,7 @@ style.textContent = `
     bottom: 3px;
     left: 3px;
     right: 3px;
-    background: #FF6347;
+    background: #722F37;
     top: 80%;
     border-radius: 29px;
     z-index: 2;
@@ -161,7 +161,7 @@ style.textContent = `
 
   .card .bottom .bottom-bottom .button {
     background: rgb(255, 255, 255);
-    color: black;
+    color: #722F37;
     border: none;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -172,14 +172,14 @@ style.textContent = `
   }
 
   .card .bottom .bottom-bottom .button:hover {
-    background: white;
-    color: #FF6347;
+    background: #f8f8f8;
+    transform: scale(1.05);
   }
 
   .card:hover {
     border-top-left-radius: 55px;
-    box-shadow: 0 0 30px rgba(255, 99, 71, 0.3);
-    border: 2px solid #FF6347;
+    box-shadow: 0 0 30px rgba(114, 47, 55, 0.3);
+    border: 2px solid #722F37;
   }
 
   .card:hover .bottom {
@@ -196,7 +196,7 @@ style.textContent = `
     left: 10px;
     border-radius: 50%;
     z-index: 3;
-    border: 4px solid #FF6347;
+    border: 4px solid #722F37;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
   }
