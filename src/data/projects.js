@@ -38,5 +38,13 @@ export const projects = [
     image: '/Game.png',
     link: 'https://kalvium-chill-zone.netlify.app/',
     students: ['Made by - Heramb']
+  },
+  {
+    title: 'JungFlix',
+    description: 'A collaborative task management application with real-time updates',
+    tech: ['Only Frontend','html','Javascript','CSS'],
+    image: '/jungflix.png',
+    link: 'https://jungflix.netlify.app/',
+    students: ['Made by - Shivam']
   }
 ];

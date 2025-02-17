@@ -87,7 +87,7 @@ export function Landing() {
       <!-- Initial Logo -->
       <div class="logo-container fixed top-0 left-0 w-full h-screen flex items-center justify-center z-30 pointer-events-none transition-all duration-500 ease-out">
         <img 
-          src="/vite.svg" 
+          src="/logo.png" 
           alt="Squad 72 Logo" 
           class="w-32 h-32 md:w-48 md:h-48 transform transition-transform"
         />
