@@ -6,7 +6,8 @@ export function router() {
     '/students': () => import('./pages/Students.js').then(m => m.Students()),
     '/projects': () => import('./pages/Projects.js').then(m => m.Projects()),
     '/memories': () => import('./pages/Memories.js').then(m => m.Memories()),
-    '/about': () => import('./pages/About.js').then(m => m.About())
+    '/about': () => import('./pages/About.js').then(m => m.About()),
+    '/memory/:id': (params) => import('./pages/MemoryDetail.js').then(m => m.MemoryDetail(params))
   };
 
   function setupMobileMenu() {
@@ -46,8 +47,38 @@ export function router() {
 
   async function handleRoute() {
     const path = window.location.pathname;
-    const page = routes[path] || routes['/'];
-    const content = await page();
+    let matchedRoute = null;
+    let params = {};
+
+    // Check for dynamic routes
+    for (const [route, handler] of Object.entries(routes)) {
+      if (route.includes(':')) {
+        const routeParts = route.split('/');
+        const pathParts = path.split('/');
+        
+        if (routeParts.length === pathParts.length) {
+          const match = routeParts.every((part, i) => {
+            if (part.startsWith(':')) {
+              params[part.slice(1)] = pathParts[i];
+              return true;
+            }
+            return part === pathParts[i];
+          });
+          
+          if (match) {
+            matchedRoute = handler;
+            break;
+          }
+        }
+      } else if (route === path) {
+        matchedRoute = handler;
+        params = {};
+        break;
+      }
+    }
+
+    const page = matchedRoute || routes['/'];
+    const content = await page(params);
     
     const app = document.querySelector('#app');
     const navigation = path === '/' ? '' : await import('./components/Navigation.js').then(m => m.Navigation());
